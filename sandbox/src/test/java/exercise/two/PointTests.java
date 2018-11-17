@@ -7,7 +7,6 @@ public class PointTests {
 
 	@Test
 	public void testDistanceEquals1() {
-
 		Point p1 = new Point(2, 5);
 		Point p2 = new Point(5, 9);
 
