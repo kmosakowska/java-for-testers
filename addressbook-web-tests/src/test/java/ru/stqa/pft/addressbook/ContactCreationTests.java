@@ -1,9 +1,7 @@
 package ru.stqa.pft.addressbook;
 
 import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.*;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -11,7 +9,7 @@ public class ContactCreationTests {
 	private WebDriver wd;
 
 
-	@BeforeClass(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		wd = new FirefoxDriver();
 		wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -33,7 +31,6 @@ public class ContactCreationTests {
 		initContactCreation();
 		fillContactForm(new ContactData("Name", "Middle", "Last", "Nickname", "Mrs", "Inc", "Test"));
 		submitContactForm();
-
 	}
 
 	private void submitContactForm() {
@@ -62,7 +59,7 @@ public class ContactCreationTests {
 		wd.findElement(By.linkText("add new")).click();
 	}
 
-	@AfterClass(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		logout();
 		wd.quit();
