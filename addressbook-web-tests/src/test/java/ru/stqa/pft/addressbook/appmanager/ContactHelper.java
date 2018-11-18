@@ -39,4 +39,12 @@ public class ContactHelper extends HelperBase {
 	public void acceptContactDeletion() {
 		acceptAlert();
 	}
+
+	public void editContact() {
+		click(By.xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img"));
+	}
+
+	public void submitContactModification() {
+		click(By.name("update"));
+	}
 }
